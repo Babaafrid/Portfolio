@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/logo.png";
+import Resume from "../assets/Resume.pdf";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +36,9 @@ function Navbar() {
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
-      <a href="" className="action-btn">Download Resume</a>
+      <a href={Resume} download="Baba_Afrid_Resume.pdf" className="action-btn">
+              Download Resume
+            </a>
       <div className="toggle-btn" onClick={toggleMenu}>
           {isOpen ? (
             <box-icon name="x" color="white"></box-icon>
@@ -65,7 +68,7 @@ function Navbar() {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <a href="" className="action-btn">
+            <a href={Resume} download="Baba_Afrid_Resume.pdf" className="action-btn">
               Download Resume
             </a>
           </li>

@@ -32,6 +32,7 @@
 
   .certcard .certcontent p{
     font-size: 1.1rem;
+    padding: 2px;
     color: limegreen;
   }
 
@@ -41,7 +42,7 @@
     object-fit: contain;
   }
 
-  .certcard .certcontent {
+  /* .certcard .certcontent {
     transform: translateY(-100%);
     opacity: 0;
     transition: 0.3s ease-in-out;
@@ -50,4 +51,4 @@
   .certcard:hover .certcontent {
     transform: translateY(0);
     opacity: 1;
-  }
+  } */

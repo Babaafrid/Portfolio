@@ -6,7 +6,7 @@ function ProjectCard() {
     <div class="projectcardBox">
       <div class="projectcard">
         <div class="projectcontent1">
-          <h2>Project Name</h2>
+          <p>Project Name</p>
         </div>
         <img src="https://i.pinimg.com/originals/1e/e7/06/1ee706a1aa659e5bc431e9472e95f39e.jpg"></img>
         <div class="projectcontent">
