@@ -1,0 +1,44 @@
+.experience-container {
+    margin: 20px;
+  }
+  
+  .timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .timeline-item {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 50px;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: limegreen; /* Line color */
+  }
+  
+  .timeline-content {
+    /* background-color: #f4f4f4; */
+    background: #000814;
+    color: #fff;
+    border: 2px solid limegreen;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .timeline-content h3 {
+    margin-top: 0;
+  }
+  
+  .timeline-content p {
+    margin-bottom: 10px;
+  }
+  

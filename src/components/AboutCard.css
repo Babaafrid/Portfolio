@@ -1,0 +1,83 @@
+.aboutcard {
+    width: 100%; /* Adjust the width */
+    max-width: 400px; /* Set a maximum width if needed */
+    height: auto; /* Adjust the height as needed */
+    background: #000814;
+    transition: 1s ease-in-out;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid limegreen;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto; /* Adjust margin */
+    padding: 15px; /* Adjust padding */
+  }
+  
+  /* Add your existing AboutCard styles here */
+  
+  .aboutcard span {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: block;
+    font-size: 1.5em;
+    margin-top: 15px;
+  }
+  
+  .aboutcard .aboutinfo {
+    font-weight: 400;
+    color: white;
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    margin: 1em;
+  }
+  
+  .aboutcard .aboutimg {
+    width: 8.8em;
+    height: 8.8em;
+    background: white;
+    border-radius: 15px;
+    border: 2px solid limegreen;
+    margin: auto;
+  }
+  
+  .aboutcard .aboutshare {
+    /* margin-top: 1em; */
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+  }
+  
+  .aboutcard a {
+    color: white;
+    transition: .4s ease-in-out;
+  }
+  
+  .aboutcard a:hover {
+    color: limegreen;
+  }
+  
+  .aboutcard button {
+    padding: 0.5em 0em;
+    display: block;
+    margin: 25px;
+    border-radius: 25px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    background: limegreen;
+    color: white;
+    transition: .4s ease-in-out;
+  }
+  
+  .aboutcard button:hover{
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px) {
+    .aboutcard {
+      max-width: 90%; /* Adjust the width */
+    }
+  }
+  

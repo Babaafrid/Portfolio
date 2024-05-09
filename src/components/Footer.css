@@ -1,0 +1,21 @@
+.footer-flex {
+    color: #fff; /* Text color */
+    padding: 20px; /* Padding around the content */
+  }
+  
+  .footer-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Adjust text styles as needed */
+  .footer-column p {
+    font-size: 16px;
+  }
+  
+  /* Add hover effect to change text color */
+  .footer-column p:hover {
+    color: limegreen; /* Change to desired hover color */
+  }
+  

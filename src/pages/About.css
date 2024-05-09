@@ -1,0 +1,38 @@
+/* About.css */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px; /* Adjust the max-width as needed */
+}
+
+.about-left {
+  width: calc(50% - 10px); /* Adjust the width and margin */
+  margin-right: 20px; /* Adjust the margin */
+}
+
+.about-right {
+  width: calc(50% - 10px); /* Adjust the width and margin */
+  margin-top: 30px;
+}
+
+/* Add your existing AboutCard, Skills, and Tags styles here */
+
+@media screen and (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-left, .about-right {
+    width: 100%;
+    margin: 0;
+  }
+}
+
