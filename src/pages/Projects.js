@@ -4,18 +4,37 @@ import ProjectCard from '../components/ProjectCard';
 import "./Projects.css"; // Import CSS file for Projects component
 import Footer from '../components/Footer';
 
+import hashinclude from "../assets/hashinclude.png"
+import focus from "../assets/focus.png"
+import carrental from "../assets/car-rental.png"
+import hli from "../assets/hli.png"
+import google from "../assets/google.png"
+import bg from "../assets/bg.png"
+import qr from "../assets/qr.png"
+import ai from "../assets/ai.png"
+import snake from "../assets/snake.png"
+import tictactoe from "../assets/tictactoe.png"
+import spotify from "../assets/spotify.png"
+import scm from "../assets/scm.jpg"
+
 function Projects() {
   return (
     <div>
       <Navbar />
       <h2 className='project-heading'>My <span className='lime'>Projects</span></h2>
       <div className="projectsContainer">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        <ProjectCard img={hashinclude} name="HashInclude 2k24" link="https://klhashinclude.in/" />
+        <ProjectCard img={focus} name="FOCUS" link="https://klfocus.netlify.app/" />
+        <ProjectCard img={carrental} name="Car Rental System" git="https://github.com/Babaafrid/Car_Rental" />
+        <ProjectCard img={hli} name="Health and Life Insurance System" git="https://github.com/Babaafrid/HLI" />
+        <ProjectCard img={scm} name="Supply Chain Management" git="https://github.com/Babaafrid/Supply-Chain-Management" />
+        <ProjectCard img={google} name="Google Clone" git="https://github.com/Babaafrid/google_clone" link="https://googleclone7.netlify.app/" />
+        <ProjectCard img={bg} name="Background Image Remover" git="https://github.com/Babaafrid/bg-remover" link="https://afrid-bgremover.netlify.app/" />
+        <ProjectCard img={qr} name="QR Code Generator" git="https://github.com/Babaafrid/qrcode" link="https://afrid-qrcode.netlify.app/" />
+        <ProjectCard img={ai} name="AI Assistant" git="https://github.com/Babaafrid/AI_Assistant" />
+        <ProjectCard img={snake} name="Snake Mania" git="https://github.com/Babaafrid/snakemania" link="https://babaafrid.github.io/snakemania/" />
+        <ProjectCard img={tictactoe} name="Tic Tac Toe" git="https://github.com/Babaafrid/tictactoe" link="https://babaafrid.github.io/tictactoe/" />
+        <ProjectCard img={spotify} name="Spotify Clone" git="https://github.com/Babaafrid/spotify_clone" link="https://babaafrid.github.io/spotify_clone/" />
       </div>
       <Footer />
     </div>

@@ -1,20 +1,26 @@
 import React from "react";
 import "./ProjectCard.css";
 
-function ProjectCard() {
+function ProjectCard({ name, link, git,img }) {
   return (
-    <div class="projectcardBox">
-      <div class="projectcard">
-        <div class="projectcontent1">
-          <p>Project Name</p>
+    <div className="projectcardBox">
+      <div className="projectcard">
+        <div className="projectcontent1">
+          <p>{name}</p>
         </div>
-        <img src="https://i.pinimg.com/originals/1e/e7/06/1ee706a1aa659e5bc431e9472e95f39e.jpg"></img>
-        <div class="projectcontent">
-        <p>Project Desc: </p>
-        </div>
-        <div class="projectcontent">
-          <box-icon name="github" type="logo" color="white"></box-icon>
-          <box-icon name="github" type="logo" color="white"></box-icon>
+        <br></br>
+        <img src={img} alt=""></img>
+        <div className="projectcontent">
+        {git && (
+            <a href={git} target="_blank" rel="noopener noreferrer">
+              <box-icon name="github" type="logo" color="white"></box-icon>
+            </a>
+          )}
+          {link && (
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              <box-icon name='link-alt' color="white"></box-icon>
+            </a>
+          )}
         </div>
       </div>
     </div>

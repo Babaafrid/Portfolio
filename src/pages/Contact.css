@@ -1,0 +1,43 @@
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+  }
+  
+  .contact-card {
+    background: #000814;
+    border: 1px solid limegreen;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    margin-top: 100px;
+    margin-bottom: 120px;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .contact-card h2 {
+    color: lime;
+  }
+  
+  .contact-card p {
+    margin: 5px 0;
+    color: lime;
+  }
+
+  .contact-card box-icon {
+      margin: 25px;
+      margin-top: 60px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .contact-card {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+  }
+  
+
+  
+  
