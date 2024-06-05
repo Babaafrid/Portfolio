@@ -74,9 +74,9 @@
     animation-delay: 0.3s;
   }
   
-  .skill-per.nodejs {
+  .skill-per.django {
     /*progreso de las diferentes lenguajes*/
-    width: 80%;
+    width: 70%;
     animation-delay: 0.3s;
   }
   
