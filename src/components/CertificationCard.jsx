@@ -8,7 +8,6 @@ function CertificationCard({name,image,link}) {
         <div className="certcontent">
           <p>{name}</p>
         </div>
-        <br></br>
         <a href={link} target="_blank" rel="noopener noreferrer">
           <img src={image} alt='certificate'></img>
         </a>
