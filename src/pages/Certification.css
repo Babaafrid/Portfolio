@@ -1,7 +1,14 @@
 .cert-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
-  justify-content: center;
   margin-top: 10px;
+  padding: 0 4px 20px;
+}
+
+@media (max-width: 600px) {
+  .cert-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
