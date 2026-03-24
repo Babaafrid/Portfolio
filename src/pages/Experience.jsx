@@ -1,12 +1,9 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import './Experience.css';
-import Footer from '../components/Footer';
 
 function Experience() {
   return (
     <div>
-      <Navbar />
       <div className="experience-container">
         <h2 className='project-heading'>My <span className='lime'>Experience</span></h2>
         <div className="timeline">
@@ -73,7 +70,6 @@ function Experience() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

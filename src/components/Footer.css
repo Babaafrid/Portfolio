@@ -1,21 +1,26 @@
+/* footer styles */
 .footer-flex {
-    color: #fff; /* Text color */
-    padding: 20px; /* Padding around the content */
-  }
-  
-  .footer-column {
+    padding: 1.25rem 1rem;
+    text-align: center;
+    color: #bfbfbf;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer-column {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  /* Adjust text styles as needed */
-  .footer-column p {
-    font-size: 16px;
-  }
-  
-  /* Add hover effect to change text color */
-  .footer-column p:hover {
+}
+
+/* Adjust text styles as needed */
+.footer-column p {
+    margin: 0 auto;
+    max-width: 900px;
+    font-size: 0.95rem;
+}
+
+/* Add hover effect to change text color */
+.footer-column p:hover {
     color: limegreen; /* Change to desired hover color */
-  }
-  
+}

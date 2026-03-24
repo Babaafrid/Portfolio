@@ -9,6 +9,12 @@ a{
 a:hover{
     color: limegreen;
 }
+
+/* active route highlight */
+.nav-active {
+  color: limegreen;
+  font-weight: bold;
+}
 header{
     position: relative;
     padding: 0 2rem;
@@ -44,6 +50,13 @@ header{
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
+    background: transparent;
+    border: none;
+}
+
+.navbar .toggle-btn:focus{
+    outline: 3px solid rgba(50,205,50,0.25);
+    outline-offset: 2px;
 }
 
 .action-btn{
@@ -76,7 +89,6 @@ header{
     width: 240px;
     height: 0;
     background: #333;
-    /* backdrop-filter: blur(15px); */
     border-radius: 10px;
     overflow: hidden;
     transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);

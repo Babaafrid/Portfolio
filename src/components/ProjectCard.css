@@ -37,8 +37,9 @@
   }
 
   .projectcard img{
-    width: 350px;
-    height: 300px;
+    width: 100%;
+    height: auto;
+    max-height: 160px;
     object-fit: contain;
   }
   
@@ -55,4 +56,15 @@
   .projectcard:hover .projectcontent {
     transform: translateY(0);
     opacity: 1;
+  }
+
+  @media screen and (max-width: 480px) {
+    .projectcardBox {
+      width: 100%;
+      height: auto;
+      padding: 16px;
+    }
+    .projectcard img {
+      max-height: 200px;
+    }
   }

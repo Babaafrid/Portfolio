@@ -1,8 +1,6 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import ProjectCard from '../components/ProjectCard';
-import "./Projects.css"; // Import CSS file for Projects component
-import Footer from '../components/Footer';
+import "./Projects.css";
 
 import hashinclude from "../assets/hashinclude.png"
 import focus from "../assets/focus.png"
@@ -22,7 +20,6 @@ import sort from "../assets/sort.png";
 function Projects() {
   return (
     <div>
-      <Navbar />
       <h2 className='project-heading'>My <span className='lime'>Projects</span></h2>
       <div className="projectsContainer">
         <ProjectCard img={hashinclude} name="HashInclude 2k24" link="https://klhashinclude.in/" />
@@ -40,7 +37,6 @@ function Projects() {
         <ProjectCard img={tictactoe} name="Tic Tac Toe" git="https://github.com/Babaafrid/tictactoe" link="https://babaafrid.github.io/tictactoe/" />
         <ProjectCard img={spotify} name="Spotify Clone" git="https://github.com/Babaafrid/spotify_clone" link="https://babaafrid.github.io/spotify_clone/" />
       </div>
-      <Footer />
     </div>
   );
 }

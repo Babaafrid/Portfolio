@@ -5,6 +5,53 @@
     font-family: 'Courier New', Courier, monospace;
 }
 body{
-    /* background-image: radial-gradient(circle at center center, rgb(71, 71, 71),rgb(8, 8, 8)); */
     background-image: repeating-linear-gradient(0deg, rgb(17, 17, 17) 0px, rgb(17, 17, 17) 1px,transparent 1px, transparent 51px),repeating-linear-gradient(90deg, rgb(17, 17, 17) 0px, rgb(17, 17, 17) 1px,transparent 1px, transparent 51px),linear-gradient(90deg, hsl(49,0%,3%),hsl(49,0%,3%));
+    color: #e6e6e6;
+}
+
+/* ── Shared utilities ────────────────────────── */
+.lime {
+  color: limegreen;
+}
+
+.project-heading {
+  font-size: 30px;
+  color: #ededed;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+/* skip link for keyboard users */
+.skip-link{
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus{
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid limegreen;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+/* spinner fallback */
+.spinner{
+  display: inline-block;
+  padding: 1rem;
+  color: #fff;
+}
+
+:focus{
+  outline: 3px solid rgba(50,205,50,0.18);
+  outline-offset: 2px;
 }

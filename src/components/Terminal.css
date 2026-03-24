@@ -28,7 +28,7 @@
   }
   
   .btn {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     padding: 0;
@@ -37,10 +37,8 @@
     height: 12px;
     width: 12px;
     box-sizing: border-box;
-    border: none;
     border-radius: 100%;
     background: linear-gradient(#7d7871 0%, #595953 100%);
-    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2);
     box-shadow: 0px 0px 1px 0px #41403a, 0px 1px 1px 0px #474642;
   }
   

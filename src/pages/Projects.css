@@ -1,12 +1,8 @@
 .projectsContainer {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(320px, 1fr)
-  ); /* Adjust the minmax width as needed */
-  gap: 20px; /* Adjust the gap between cards */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
   justify-content: center;
-  margin-left: 40px;
 }
 
 .project-heading {
