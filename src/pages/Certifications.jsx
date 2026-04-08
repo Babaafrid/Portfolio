@@ -1,12 +1,12 @@
 import React from 'react'
 import CertificationCard from '../components/CertificationCard'
 import "./Certification.css";
-import tensorflow from "../assets/tensorflow.png"
-import redhat from "../assets/redhat.png"
-import awsda from "../assets/aswda.png"
-import awscp from "../assets/awscp.png"
-import az900 from "../assets/az900.png"
-import ai900 from "../assets/ai900.png"
+import tensorflow from "../assets/tensorflow.webp"
+import redhat from "../assets/redhat.webp"
+import awsda from "../assets/aswda.webp"
+import awscp from "../assets/awscp.webp"
+import az900 from "../assets/az900.webp"
+import ai900 from "../assets/ai900.webp"
 
 function Certifications() {
   return (

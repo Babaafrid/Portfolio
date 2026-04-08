@@ -2,20 +2,20 @@ import React, { useState, useMemo } from "react";
 import ProjectCard from "../components/ProjectCard";
 import "./Projects.css";
 
-import hashinclude from "../assets/hashinclude.png";
-import focus      from "../assets/focus.png";
-import carrental  from "../assets/car-rental.png";
-import hli        from "../assets/hli.png";
-import movie      from "../assets/movie.png";
-import google     from "../assets/google.png";
-import bg         from "../assets/bg.png";
-import qr         from "../assets/qr.png";
-import ai         from "../assets/ai.png";
-import snake      from "../assets/snake.png";
-import tictactoe  from "../assets/tictactoe.png";
-import spotify    from "../assets/spotify.png";
-import scm        from "../assets/scm.jpg";
-import sort       from "../assets/sort.png";
+import hashinclude from "../assets/hashinclude.webp";
+import focus      from "../assets/focus.webp";
+import carrental  from "../assets/car-rental.webp";
+import hli        from "../assets/hli.webp";
+import movie      from "../assets/movie.webp";
+import google     from "../assets/google.webp";
+import bg         from "../assets/bg.webp";
+import qr         from "../assets/qr.webp";
+import ai         from "../assets/ai.webp";
+import snake      from "../assets/snake.webp";
+import tictactoe  from "../assets/tictactoe.webp";
+import spotify    from "../assets/spotify.webp";
+import scm        from "../assets/scm.webp";
+import sort       from "../assets/sort.webp";
 
 const PROJECTS = [
   { img: hashinclude, name: "HashInclude 2k24",            link: "https://hashinclude-8ba50.web.app/", tags: ["React"],              cat: "web"   },

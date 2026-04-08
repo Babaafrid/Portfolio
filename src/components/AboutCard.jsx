@@ -8,7 +8,7 @@ function AboutCard() {
     <div className="aboutcard">
       <div className="aboutcard-top">
         <div className="aboutcard-photo-wrap">
-          <img className="aboutcard-photo" src={photo} alt="Baba Afrid S" />
+          <img className="aboutcard-photo" src={photo} alt="Baba Afrid S" loading="eager" decoding="async" />
         </div>
       </div>
       <div className="aboutcard-body">

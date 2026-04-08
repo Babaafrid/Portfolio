@@ -11,7 +11,7 @@ function CertificationCard({ name, image, link }) {
       aria-label={`View ${name} certificate`}
     >
       <div className="certcard-img-wrap">
-        <img src={image} alt={`${name} certificate`} className="certcard-img" />
+        <img src={image} alt={`${name} certificate`} className="certcard-img" loading="lazy" decoding="async" />
         <div className="certcard-overlay">
           <span className="certcard-view">
             <i className="bx bx-link-external" aria-hidden="true"></i>

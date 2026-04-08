@@ -5,7 +5,7 @@ function ProjectCard({ name, link, git, img, tags = [] }) {
   return (
     <div className="pcard">
       <div className="pcard-img-wrap">
-        <img src={img} alt={name ? `${name} screenshot` : "project screenshot"} className="pcard-img" />
+        <img src={img} alt={name ? `${name} screenshot` : "project screenshot"} className="pcard-img" loading="lazy" decoding="async" />
         <div className="pcard-overlay">
           <div className="pcard-actions">
             {git && (

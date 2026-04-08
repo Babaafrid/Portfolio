@@ -67,16 +67,6 @@ a {
   color: inherit;
 }
 
-/* ── Page fade-in on route change ─────────── */
-main {
-  animation: pageFade 0.3s ease both;
-}
-
-@keyframes pageFade {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
 /* ── Shared utilities ──────────────────────── */
 .lime { color: var(--clr-accent); }
 
