@@ -1,87 +1,131 @@
 .aboutcard {
-  width: 100%; /* Adjust the width */
-  max-width: 400px; /* Set a maximum width if needed */
-  height: auto; /* Adjust the height as needed */
-  background: #000814;
-  transition: 1s ease-in-out;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border: 1px solid limegreen;
+  width: 100%;
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  transition: border-color var(--t-base), box-shadow var(--t-base);
+}
+
+.aboutcard:hover {
+  border-color: var(--clr-border-mid);
+  box-shadow: var(--shadow-accent);
+}
+
+.aboutcard-top {
+  background: linear-gradient(135deg, var(--clr-surface) 0%, rgba(50,205,50,0.08) 100%);
+  padding: 2rem 2rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutcard-photo-wrap {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--clr-accent), rgba(50,205,50,0.3));
+}
+
+.aboutcard-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  border: 3px solid var(--clr-card);
+}
+
+.aboutcard-body {
+  padding: 0 1.5rem 1.75rem;
   display: flex;
   flex-direction: column;
-  margin: 20px auto; /* Adjust margin */
-  padding: 15px; /* Adjust padding */
-}
-
-/* Add your existing AboutCard styles here */
-
-.aboutcard span {
-  font-weight: bold;
-  color: white;
+  align-items: center;
   text-align: center;
-  display: block;
-  font-size: 1.5em;
-  margin-top: 15px;
+  gap: 0.6rem;
 }
 
-.aboutcard .aboutinfo {
-  font-weight: 400;
-  color: limegreen;
-  display: block;
-  text-align: center;
-  font-size: 1em;
-  margin: 1em;
+.aboutcard-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--clr-text-1);
+  letter-spacing: -0.01em;
 }
 
-.aboutcard .aboutimg {
-  width: 8.8em;
-  height: 8.8em;
-  background: white;
-  border-radius: 15px;
-  border: 2px solid limegreen;
-  margin: auto;
+.aboutcard-title {
+  font-size: 0.8rem;
+  color: var(--clr-accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-.aboutcard .aboutshare {
+.aboutcard-bio {
+  font-size: 0.875rem;
+  color: var(--clr-text-2);
+  line-height: 1.7;
+  margin-top: 0.25rem;
+}
+
+.aboutcard-stats {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 1em;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 0;
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  margin: 0.5rem 0;
 }
 
-.about-btn {
-  display: block;
-  margin: 20px auto;
+.stat { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.stat-val   { font-size: 1.3rem; font-weight: 700; color: var(--clr-accent); }
+.stat-label { font-size: 0.72rem; color: var(--clr-text-3); text-transform: uppercase; letter-spacing: 0.04em; }
+.stat-divider { width: 1px; height: 36px; background: var(--clr-border); }
+
+.aboutcard-socials { display: flex; gap: 0.5rem; }
+
+.aboutcard-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-md);
+  color: var(--clr-text-2);
+  font-size: 1.2rem;
+  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast), transform var(--t-fast);
+}
+
+.aboutcard-social:hover {
+  color: var(--clr-accent);
+  border-color: var(--clr-border-mid);
+  background: var(--clr-accent-dim);
+  transform: translateY(-2px);
+}
+
+.aboutcard-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
   padding: 0.55rem 1.4rem;
-  border-radius: 25px;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  background: limegreen;
-  color: white;
-  transition: 0.3s ease-in-out;
+  border-radius: var(--r-full);
+  border: 1.5px solid var(--clr-accent);
+  background: transparent;
+  color: var(--clr-accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
   cursor: pointer;
+  text-decoration: none;
+  transition: background var(--t-fast), color var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
 }
 
-.about-btn:hover {
-  transform: scale(1.05);
-}
-
-@media screen and (max-width: 768px) {
-  .aboutcard {
-    max-width: 90%; /* Adjust the width */
-  }
-}
-
-/* ensure the inner image fills the container */
-.aboutcard .img {
-  display: flex;
-  justify-content: center;
-}
-
-.aboutcard .about-photo {
-  width: 8.8em;
-  height: 8.8em;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 2px solid limegreen;
+.aboutcard-btn:hover {
+  background: var(--clr-accent);
+  color: #000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px var(--clr-accent-glow);
 }

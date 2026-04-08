@@ -1,20 +1,69 @@
-.projectsContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 0 4px 20px;
+.project-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
 }
 
-.project-heading {
-  font-size: 30px;
-  color: #ededed;
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.38rem 1rem;
+  border-radius: var(--r-full);
+  border: 1px solid var(--clr-border);
+  background: transparent;
+  color: var(--clr-text-2);
+  font-size: 0.83rem;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: color var(--t-fast), border-color var(--t-fast),
+              background var(--t-fast), transform var(--t-fast);
+}
+
+.filter-btn:hover {
+  color: var(--clr-text-1);
+  border-color: var(--clr-border-mid);
+  background: rgba(255,255,255,0.04);
+}
+
+.filter-btn.active {
+  background: var(--clr-accent);
+  color: #000;
+  border-color: var(--clr-accent);
+  font-weight: 700;
+}
+
+.filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--r-full);
+  background: rgba(255,255,255,0.12);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.filter-btn.active .filter-count { background: rgba(0,0,0,0.2); }
+
+.projectsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  padding-bottom: 1.5rem;
+}
+
+.projects-empty {
   text-align: center;
-  margin-bottom: 20px;
+  color: var(--clr-text-3);
+  padding: 3rem 0;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 600px) {
-  .projectsContainer {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+  .projectsContainer { grid-template-columns: 1fr; }
 }

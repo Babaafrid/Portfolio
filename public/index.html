@@ -11,6 +11,11 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!-- This file is retained for compatibility. Vite uses project root index.html -->
+    <!-- Netlify Forms: hidden form for static detection -->
+    <form name="contact" data-netlify="true" hidden>
+      <input type="text"  name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
   </body>
 </html>

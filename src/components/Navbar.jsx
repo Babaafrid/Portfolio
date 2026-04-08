@@ -1,98 +1,111 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect, useCallback } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/logo.png";
 import Resume from "../assets/Resume.pdf";
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const NAV_LINKS = [
+  { to: "/",               label: "Home",           end: true },
+  { to: "/about",          label: "About" },
+  { to: "/experience",     label: "Experience" },
+  { to: "/projects",       label: "Projects" },
+  { to: "/certifications", label: "Certifications" },
+  { to: "/contact",        label: "Contact" },
+];
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+function Navbar() {
+  const [isOpen,   setIsOpen]   = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    function onKey(e) {
-      if (e.key === "Escape") setIsOpen(false);
-    }
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") setIsOpen(false); };
     globalThis.addEventListener("keydown", onKey);
     return () => globalThis.removeEventListener("keydown", onKey);
   }, []);
 
-  const closeMenu = () => setIsOpen(false);
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [isOpen]);
+
+  const closeMenu = useCallback(() => setIsOpen(false), []);
 
   return (
-    <header>
+    <header className={scrolled ? "scrolled" : ""}>
       <div className="navbar">
-        <NavLink to="/" className="logo" onClick={closeMenu}>
-          <img src={logo} alt="Baba Afrid logo" />
+        <NavLink to="/" className="logo" onClick={closeMenu} aria-label="Home">
+          <img src={logo} alt="Baba Afrid" />
         </NavLink>
-        <ul className="links">
-          <li>
-            <NavLink to="/" end className={({ isActive }) => isActive ? "nav-active" : ""} onClick={closeMenu}>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about" className={({ isActive }) => isActive ? "nav-active" : ""} onClick={closeMenu}>About</NavLink>
-          </li>
-          <li>
-            <NavLink to="/experience" className={({ isActive }) => isActive ? "nav-active" : ""} onClick={closeMenu}>Experience</NavLink>
-          </li>
-          <li>
-            <NavLink to="/projects" className={({ isActive }) => isActive ? "nav-active" : ""} onClick={closeMenu}>Projects</NavLink>
-          </li>
-          <li>
-            <NavLink to="/certifications" className={({ isActive }) => isActive ? "nav-active" : ""} onClick={closeMenu}>Certifications</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-active" : ""} onClick={closeMenu}>Contact</NavLink>
-          </li>
-        </ul>
+
+        <nav aria-label="Main navigation">
+          <ul className="links">
+            {NAV_LINKS.map(({ to, label, end }) => (
+              <li key={to}>
+                <NavLink
+                  to={to}
+                  end={end}
+                  className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"}
+                  onClick={closeMenu}
+                >
+                  {label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <a href={Resume} download="Baba_Afrid_Resume.pdf" className="action-btn">
-          Download Resume
+          <i className="bx bx-download" aria-hidden="true"></i>
+          Resume
         </a>
 
         <button
           className="toggle-btn"
-          onClick={toggleMenu}
+          onClick={() => setIsOpen((o) => !o)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
+          aria-controls="mobile-nav"
         >
-          {isOpen ? (
-            <i className="bx bx-x" style={{ fontSize: '1.6rem', color: 'white' }} aria-hidden="true"></i>
-          ) : (
-            <i className="bx bx-menu-alt-left" style={{ fontSize: '1.6rem', color: 'white' }} aria-hidden="true"></i>
-          )}
+          <i className={isOpen ? "bx bx-x" : "bx bx-menu-alt-left"} aria-hidden="true"></i>
         </button>
       </div>
 
-      <div className={isOpen ? "dropdown-menu open" : "dropdown-menu"}>
+      <nav
+        id="mobile-nav"
+        className={`dropdown-menu${isOpen ? " open" : ""}`}
+        aria-hidden={!isOpen}
+      >
         <ul>
-          <li>
-            <NavLink to="/" end className={({ isActive }) => isActive ? "nav-active" : ""} onClick={closeMenu}>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about" className={({ isActive }) => isActive ? "nav-active" : ""} onClick={closeMenu}>About</NavLink>
-          </li>
-          <li>
-            <NavLink to="/experience" className={({ isActive }) => isActive ? "nav-active" : ""} onClick={closeMenu}>Experience</NavLink>
-          </li>
-          <li>
-            <NavLink to="/projects" className={({ isActive }) => isActive ? "nav-active" : ""} onClick={closeMenu}>Projects</NavLink>
-          </li>
-          <li>
-            <NavLink to="/certifications" className={({ isActive }) => isActive ? "nav-active" : ""} onClick={closeMenu}>Certifications</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-active" : ""} onClick={closeMenu}>Contact</NavLink>
-          </li>
-          <li>
+          {NAV_LINKS.map(({ to, label, end }) => (
+            <li key={to}>
+              <NavLink
+                to={to}
+                end={end}
+                className={({ isActive }) => isActive ? "nav-link nav-active" : "nav-link"}
+                onClick={closeMenu}
+              >
+                {label}
+              </NavLink>
+            </li>
+          ))}
+          <li className="mobile-resume">
             <a href={Resume} download="Baba_Afrid_Resume.pdf" className="action-btn">
+              <i className="bx bx-download" aria-hidden="true"></i>
               Download Resume
             </a>
           </li>
         </ul>
-      </div>
+      </nav>
+
+      {isOpen && (
+        <div className="nav-backdrop" onClick={closeMenu} aria-hidden="true" />
+      )}
     </header>
   );
 }

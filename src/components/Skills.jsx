@@ -12,38 +12,29 @@ const SKILLS = [
 ];
 
 function Skills() {
-  const containerRef = useRef(null);
+  const ref = useRef(null);
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setAnimated(true);
-          observer.disconnect();
-        }
-      },
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setAnimated(true); obs.disconnect(); } },
       { threshold: 0.2 }
     );
-    if (containerRef.current) observer.observe(containerRef.current);
-    return () => observer.disconnect();
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
   }, []);
 
   return (
-    <div
-      className={`skill-container${animated ? " skills-animated" : ""}`}
-      ref={containerRef}
-    >
-      <h2 className="skill-heading">
-        My <span className="lime">Skills</span>
-      </h2>
+    <div className={`skill-container${animated ? " skills-animated" : ""}`} ref={ref}>
+      <h3 className="skill-heading">My <span className="lime">Skills</span></h3>
       {SKILLS.map(({ name, cls, pct }) => (
         <div className="skill-box" key={name}>
-          <span className="skill-title">{name}</span>
+          <div className="skill-header">
+            <span className="skill-title">{name}</span>
+            <span className="skill-pct">{pct}</span>
+          </div>
           <div className="skill-bar">
-            <span className={`skill-per ${cls}`}>
-              <span className="tooltip">{pct}</span>
-            </span>
+            <div className={`skill-fill ${cls}`}></div>
           </div>
         </div>
       ))}
@@ -52,4 +43,3 @@ function Skills() {
 }
 
 export default Skills;
-

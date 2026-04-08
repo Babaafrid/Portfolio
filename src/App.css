@@ -1,29 +1,96 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
-}
-body{
-    background-image: repeating-linear-gradient(0deg, rgb(17, 17, 17) 0px, rgb(17, 17, 17) 1px,transparent 1px, transparent 51px),repeating-linear-gradient(90deg, rgb(17, 17, 17) 0px, rgb(17, 17, 17) 1px,transparent 1px, transparent 51px),linear-gradient(90deg, hsl(49,0%,3%),hsl(49,0%,3%));
-    color: #e6e6e6;
+/* ════════════════════════════════════════════
+   DESIGN TOKENS
+   ════════════════════════════════════════════ */
+:root {
+  /* Colors */
+  --clr-bg:           #080c0f;
+  --clr-surface:      #0d1117;
+  --clr-card:         #161b22;
+  --clr-card-hover:   #1c2330;
+  --clr-border:       rgba(50,205,50,0.15);
+  --clr-border-mid:   rgba(50,205,50,0.35);
+  --clr-border-hi:    rgba(50,205,50,0.65);
+  --clr-accent:       #32cd32;
+  --clr-accent-dim:   rgba(50,205,50,0.10);
+  --clr-accent-glow:  rgba(50,205,50,0.22);
+  --clr-text-1:       #e6edf3;
+  --clr-text-2:       #8b949e;
+  --clr-text-3:       #6e7681;
+  --clr-danger:       #f85149;
+  --clr-success:      #3fb950;
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+
+  /* Radii */
+  --r-sm:   6px;
+  --r-md:   10px;
+  --r-lg:   16px;
+  --r-xl:   24px;
+  --r-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:     0 1px 4px rgba(0,0,0,0.45);
+  --shadow-md:     0 4px 18px rgba(0,0,0,0.50);
+  --shadow-lg:     0 8px 32px rgba(0,0,0,0.60);
+  --shadow-accent: 0 0 24px rgba(50,205,50,0.20);
+
+  /* Transitions */
+  --t-fast: 0.14s ease;
+  --t-base: 0.24s ease;
+  --t-slow: 0.40s ease;
 }
 
-/* ── Shared utilities ────────────────────────── */
-.lime {
-  color: limegreen;
+/* ════════════════════════════════════════════
+   RESET & GLOBALS
+   ════════════════════════════════════════════ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--clr-bg);
+  background-image:
+    linear-gradient(rgba(50,205,50,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(50,205,50,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  color: var(--clr-text-1);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Page fade-in on route change ─────────── */
+main {
+  animation: pageFade 0.3s ease both;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Shared utilities ──────────────────────── */
+.lime { color: var(--clr-accent); }
 
 .project-heading {
-  font-size: 30px;
-  color: #ededed;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--clr-text-1);
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 10px;
+  margin-bottom: 2rem;
+  margin-top: 0.25rem;
+  letter-spacing: -0.01em;
 }
 
-/* skip link for keyboard users */
-.skip-link{
+/* ── Skip link ─────────────────────────────── */
+.skip-link {
   position: absolute;
   left: -9999px;
   top: auto;
@@ -31,27 +98,43 @@ body{
   height: 1px;
   overflow: hidden;
 }
-
-.skip-link:focus{
+.skip-link:focus {
   left: 1rem;
-  top: 1rem;
+  top: 4.5rem;
   width: auto;
   height: auto;
   padding: 0.5rem 0.75rem;
-  background: rgba(0,0,0,0.7);
-  border: 1px solid limegreen;
-  border-radius: 4px;
-  z-index: 1000;
+  background: rgba(0,0,0,0.9);
+  border: 1px solid var(--clr-accent);
+  border-radius: var(--r-sm);
+  color: var(--clr-accent);
+  z-index: 9999;
 }
 
-/* spinner fallback */
-.spinner{
-  display: inline-block;
-  padding: 1rem;
-  color: #fff;
+/* ── Loading spinner ───────────────────────── */
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 50vh;
+  color: var(--clr-text-2);
+  font-size: 0.875rem;
 }
+.spinner::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(50,205,50,0.18);
+  border-top-color: var(--clr-accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
 
-:focus{
-  outline: 3px solid rgba(50,205,50,0.18);
-  outline-offset: 2px;
+/* ── Focus visible ─────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 3px;
 }
+:focus:not(:focus-visible) { outline: none; }

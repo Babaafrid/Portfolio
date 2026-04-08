@@ -1,19 +1,27 @@
-import React from 'react'
+import React from "react";
 import "./CertificationCard.css";
 
-function CertificationCard({name,image,link}) {
+function CertificationCard({ name, image, link }) {
   return (
-    <div className="certcardbox">
-      <div className="certcard">
-        <div className="certcontent">
-          <p>{name}</p>
+    <a
+      className="certcard"
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`View ${name} certificate`}
+    >
+      <div className="certcard-img-wrap">
+        <img src={image} alt={`${name} certificate`} className="certcard-img" />
+        <div className="certcard-overlay">
+          <span className="certcard-view">
+            <i className="bx bx-link-external" aria-hidden="true"></i>
+            View Credential
+          </span>
         </div>
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          <img src={image} alt='certificate'></img>
-        </a>
       </div>
-    </div>
-  )
+      <p className="certcard-name">{name}</p>
+    </a>
+  );
 }
 
-export default CertificationCard
+export default CertificationCard;

@@ -1,26 +1,71 @@
-/* footer styles */
-.footer-flex {
-    padding: 1.25rem 1rem;
-    text-align: center;
-    color: #bfbfbf;
-    background: transparent;
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
+﻿/* Footer */.footer {
+  border-top: 1px solid var(--clr-border);
+  padding: 1.25rem 2rem;
+  background: rgba(13,17,23,0.6);
 }
 
-.footer-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-/* Adjust text styles as needed */
-.footer-column p {
-    margin: 0 auto;
-    max-width: 900px;
-    font-size: 0.95rem;
+.footer-socials { display: flex; gap: 0.65rem; }
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text-2);
+  font-size: 1.2rem;
+  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast), transform var(--t-fast);
 }
 
-/* Add hover effect to change text color */
-.footer-column p:hover {
-    color: limegreen; /* Change to desired hover color */
+.footer-social-link:hover {
+  color: var(--clr-accent);
+  border-color: var(--clr-border-mid);
+  background: var(--clr-accent-dim);
+  transform: translateY(-2px);
+}
+
+.footer-copy {
+  color: var(--clr-text-3);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.footer-name { color: var(--clr-accent); }
+
+.footer-top-btn {
+  background: transparent;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-sm);
+  color: var(--clr-text-2);
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast), transform var(--t-fast);
+}
+
+.footer-top-btn:hover {
+  color: var(--clr-accent);
+  border-color: var(--clr-border-mid);
+  background: var(--clr-accent-dim);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .footer-copy { order: 3; width: 100%; }
 }

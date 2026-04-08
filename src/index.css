@@ -1,7 +1,22 @@
-/* basic reset for Vite entry */
-html,body,#root{
+/* ── Reset & base ──────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
   height: 100%;
 }
-body{
-  margin:0;
+
+body {
+  margin: 0;
+  height: 100%;
 }
+
+#root {
+  height: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar              { width: 5px; }
+::-webkit-scrollbar-track        { background: #080c0f; }
+::-webkit-scrollbar-thumb        { background: rgba(50,205,50,0.35); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover  { background: rgba(50,205,50,0.65); }

@@ -77,10 +77,10 @@ function Terminal() {
   return (
     <div className="terminal-container">
       <div className="terminal_toolbar">
-        <div className="butt">
-          <span className="btn btn-color" role="presentation"></span>
-          <span className="btn" role="presentation"></span>
-          <span className="btn" role="presentation"></span>
+        <div className="butt" aria-hidden="true">
+          <span className="btn btn-color"></span>
+          <span className="btn"></span>
+          <span className="btn"></span>
         </div>
         <p className="user">babaafrid7@admin: ~</p>
         <div className="add_tab" aria-hidden="true">+</div>
